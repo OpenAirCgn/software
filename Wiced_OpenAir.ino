@@ -1,7 +1,7 @@
 #include "OpenAirSensor.h"
 
 OpenAirSensor sensor(A0,A1,A2,A3); // Feather M0 Wifi
-//OpenAirSensor sensor(C3,C2,A3,A2); // Wiced Feather
+//OpenAirSensor sensor(PC3,PC2,PA3,PA2); // Wiced Feather
 
 void setup() {
   // put your setup code here, to run once:
