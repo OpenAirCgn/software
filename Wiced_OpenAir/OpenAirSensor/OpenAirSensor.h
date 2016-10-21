@@ -22,8 +22,7 @@ class OpenAirSensor
     float r0_ox = 900; // assumed resistance in fresh air... to be calibrated
     float r0_co = 200; // assumed resistance in fresh air... to be calibrated
     float r_ox = 0; // calculated resistance
-    float r_co = 0; // calculated resistance       
-     
+    float r_co = 0; // calculated resistance
 
   private:
     int _pre;
@@ -33,7 +32,7 @@ class OpenAirSensor
 
     // vars for resistor calculation
     int resolution = 1023; // resolution steps of the ADC
-    float board_volt; // input voltage
+    float board_volt = 3.3; // input voltage
     float vout_ox = 0; // output voltage
     float vout_co = 0; // output voltage
     float r5 = 3900; // RLOAD_OX in Ohm
@@ -44,7 +43,6 @@ class OpenAirSensor
     float ppm_ox = 0;
     float ratio_co = 0;
     float ppm_co = 0;
-    
     float get_ox_resistane(void);
     float get_co_resistane(void);
 };

@@ -57,25 +57,24 @@ void OpenAirSensor::change_resolution(int res)
 }
 
 /*********************************************************************************************************
-** Descriptions:            read out pin and calculate resistance 
+** Descriptions:            read out pin and calculate resistance no2
 *********************************************************************************************************/
 float OpenAirSensor::get_ox_resistane(void)
 {
   vout_ox = (board_volt / resolution) * analogRead(_vnox); // Calculates the Voltage
   r_ox = ((board_volt - vout_ox) * r5)/vout_ox; // Calculates the resistance
 
-  return r_ox;
+  return isnan(r_ox)?-1:r_ox;
 }
 
 /*********************************************************************************************************
-** Descriptions:            read out pin and calculate resistance 
+** Descriptions:            read out pin and calculate resistance co
 *********************************************************************************************************/
 float OpenAirSensor::get_co_resistane(void)
 {
-  vout_co = (board_volt / resolution) * analogRead(_vnox); // Calculates the Voltage
+  vout_co = (board_volt / resolution) * analogRead(_vred); // Calculates the Voltage
   r_co = ((board_volt - vout_co) * r7)/vout_co; // Calculates the resistance
-
-  return r_co;
+  return isnan(r_co)?-1:r_co;
 }
 
 /*********************************************************************************************************
